@@ -16,6 +16,9 @@ ql repo https://ghproxy.com/https://github.com/fengwenhua/steamtools_sign_in.git
 
 cookie用于签到，username用于验证cookie是否失效
 
+![image](https://github.com/fengwenhua/steamtools_sign_in/assets/26518808/8e679d8a-e57e-41ba-b809-5966190098c3)
+
+
 
 值应该类似如下:
 
