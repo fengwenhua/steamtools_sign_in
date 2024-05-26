@@ -2,6 +2,8 @@
 steamtools - 青龙自动签到脚本（cookie)
 
 ## 使用
+需要安装 curl_cffi 依赖
+
 ```shell
 ql repo https://github.com/fengwenhua/steamtools_sign_in.git "steamtools.py" "" "sendNotify"
 ```
@@ -9,7 +11,7 @@ ql repo https://github.com/fengwenhua/steamtools_sign_in.git "steamtools.py" "" 
 国内机器如下：
 
 ```shell
-ql repo https://ghproxy.com/https://github.com/fengwenhua/steamtools_sign_in.git "steamtools.py" "" "sendNotify"
+ql repo https://gitproxy.fengwenhuaimg.top/https://github.com/fengwenhua/steamtools_sign_in.git "steamtools.py" "" "sendNotify"
 ```
 
 青龙面板新增环境变量: `STEAMTOOLS_COOKIE` 和 `STEAMTOOLS_USER`
