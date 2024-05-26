@@ -5,11 +5,12 @@ new Env('SteamTools');
 """
 
 from sendNotify import send
-import requests
+from curl_cffi import requests
+
 import re
 import os
 import time
-requests.packages.urllib3.disable_warnings()
+#requests.packages.urllib3.disable_warnings()
 
 
 class SteamTools(object):
@@ -50,15 +51,22 @@ class SteamTools(object):
             print('[-] err: ', str(e))
             exit(-1)
 
-        self.formhash = re.search(
-            r'<input type="hidden" name="formhash" value="(.+?)" />', rqs).group(1)
+        searchObj = re.search(
+            r'<input type="hidden" name="formhash" value="(.+?)" />', rqs)
 
+        if searchObj:
+            self.formhash = searchObj.group(1)
+        else:
+            print('[-] cookie 不能用了')
+            send("steamtools 签到结果", "steamtools Cookie已失效，请重新设置Cookie")
+            print(rqs)
+            exit(-1)
         print("[*] formhash: ", self.formhash)
         if username in rqs:
             print("[+] cookie能用")
         else:
             print('[-] cookie 不能用了')
-            send("steamtools Cookie已失效，请重新设置Cookie")
+            send("steamtools 签到结果", "steamtools Cookie已失效，请重新设置Cookie")
             exit(-1)
 
     def start(self):
